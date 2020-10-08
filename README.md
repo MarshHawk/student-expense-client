@@ -1,4 +1,4 @@
 ### Start up
 - `npm install`
-- Please make sure the student expense service is running locally on the port specified in `src/environments/environment.ts`
 - `npm start`
+- If you change the port of the student expense service, please be sure to specify the port in `src/environments/environment.ts`
