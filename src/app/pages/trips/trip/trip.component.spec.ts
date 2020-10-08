@@ -4,7 +4,6 @@ import { TripComponent } from './trip.component';
 
 describe('TripComponent', () => {
   let component: TripComponent;
-  let fixture: ComponentFixture<TripComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -148,8 +147,6 @@ describe('TripComponent', () => {
         { name: "D", total_trip_expenses: 45 }]
     }
 
-    //1.59
-
     const expectedPaymentObligations = [
       {
         payer: 'A',
@@ -174,8 +171,6 @@ describe('TripComponent', () => {
 
     component.trip = mockTrip;
     component.handleCalculate();
-    console.log('actual payments');
-    console.log(component.paymentObligations);
     expect(component.paymentObligations).toEqual(expectedPaymentObligations);
   });
 
