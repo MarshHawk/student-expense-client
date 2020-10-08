@@ -1,0 +1,58 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{trip.title}}</ion-card-title>
+  </ion-card-header>
+  <ion-item class="ion-activated">
+    <ion-icon name="pricetag-outline" slot="start"></ion-icon>
+    <ion-label>Total Expenditures: ${{trip.total}}</ion-label>
+  </ion-item>
+  <ion-item class="ion-activated">
+    <ion-icon name="wallet-outline" slot="start"></ion-icon>
+    <ion-label>Individual Expense: ${{trip.average}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ng-container *ngIf="!uiState.showStudentExpenseTotals; else hideTotals">
+      <ion-button (click)="uiState.showStudentExpenseTotals = !uiState.showStudentExpenseTotals">View Totals</ion-button>
+    </ng-container>
+    <ng-template #hideTotals>
+      <ion-button (click)="uiState.showStudentExpenseTotals = !uiState.showStudentExpenseTotals">Hide Totals</ion-button>
+    </ng-template>
+    <ng-container *ngIf="!uiState.showPaymentObligations; else hideCalculations">
+      <ion-button (click)="handleCalculate()">Calculate</ion-button>
+    </ng-container>
+    <ng-template #hideCalculations>
+      <ion-button (click)="uiState.showPaymentObligations = !uiState.showPaymentObligations">Hide Calculations</ion-button>
+    </ng-template>
+  </ion-item>
+  <ion-list *ngIf="uiState.showStudentExpenseTotals">
+    <ion-label class="left-margin">
+      Student Expense Totals
+    </ion-label>
+    <ion-item-group>
+      <ion-item *ngFor="let student of trip.students">
+        <ion-avatar slot="start">
+          {{student.name[0]}}
+        </ion-avatar>
+          {{student.name +': $' + student.total_trip_expenses}}
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+  <ion-list *ngIf="uiState.showPaymentObligations">
+    <ion-label class="left-margin">
+      Payment Obligations
+    </ion-label>
+    <ion-item-group>
+      <ion-item *ngFor="let po of paymentObligations">
+        <ion-avatar slot="start">
+          {{po.payer[0]}}
+        </ion-avatar>
+        <ion-item>
+          {{po.payer + ' owes ' + po.recipient +  ' $' + po.amount}}
+        </ion-item>
+        <ion-avatar slot="end">
+          {{po.recipient[0]}}
+        </ion-avatar>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-card>

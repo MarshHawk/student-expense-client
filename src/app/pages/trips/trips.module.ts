@@ -4,17 +4,18 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FolderPageRoutingModule } from './folder-routing.module';
+import { TripsPageRoutingModule } from './trips-routing.module';
 
-import { FolderPage } from './folder.page';
+import { TripsPage } from './trips.page';
+import { TripComponent } from './trip/trip.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule
+    TripsPageRoutingModule
   ],
-  declarations: [FolderPage]
+  declarations: [TripsPage, TripComponent]
 })
-export class FolderPageModule {}
+export class TripsPageModule {}
