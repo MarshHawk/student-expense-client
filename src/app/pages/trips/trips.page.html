@@ -15,7 +15,7 @@
   </ion-header>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let trip of trips" size="auto">
+      <ion-col *ngFor="let trip of trips$ | async" size="auto">
         <app-trip [trip]="trip"></app-trip>
       </ion-col>
     </ion-row>

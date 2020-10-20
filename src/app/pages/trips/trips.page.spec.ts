@@ -3,7 +3,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { TripsPage } from './trips.page';
 import { TripsService } from './trips.service';
-import { of } from 'rxjs';
 
 describe('Given TripsPage', () => {
   let component: TripsPage;
@@ -25,15 +24,13 @@ describe('Given TripsPage', () => {
     mockService = TestBed.inject(TripsService) as jasmine.SpyObj<TripsService>;
   });
 
-  it('when instantiated then it should be created with empty state object', () => {
-    expect(component.trips).toEqual([]);
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 
-  it('when OnInit called then it should have correct trips state', () => {
-    const mockTrip = { title: '', total: 0, average: 0, students: [], expenses: [] }
-    mockService.fetchTrips.and.returnValue(of([mockTrip]));
+  it('when OnInit called fetchTrips should be called once', () => {
     component.ngOnInit();
-    expect(component.trips).toEqual([mockTrip]);
+    expect(mockService.fetchTrips.calls.count()).toBe(1);
   });
 
 });

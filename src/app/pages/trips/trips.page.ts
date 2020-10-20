@@ -1,6 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TripsService } from './trips.service';
 import { ITrip } from 'src/app/shared/interfaces/trip.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-trips',
@@ -9,14 +10,12 @@ import { ITrip } from 'src/app/shared/interfaces/trip.interface';
 })
 export class TripsPage implements OnInit {
 
-  public trips: ITrip[] = [];
+  public trips$: Observable<ITrip[]>;
 
   constructor(private _tripsService: TripsService) { }
 
   ngOnInit() {
-    this._tripsService.fetchTrips().subscribe((result) => {
-      this.trips = result;
-    })
+    this.trips$ = this._tripsService.fetchTrips();
   }
 
 }
