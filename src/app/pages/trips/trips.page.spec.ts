@@ -9,7 +9,7 @@ describe('Given TripsPage', () => {
   let mockService: jasmine.SpyObj<TripsService>;
 
   beforeEach(() => {
-    const spy = jasmine.createSpyObj('TripsService', ['fetchTrips']);
+    const spy = jasmine.createSpyObj('TripsService', ['getTrips']);
 
     TestBed.configureTestingModule({
       // provide the component-under-test and dependent service
@@ -28,9 +28,9 @@ describe('Given TripsPage', () => {
     expect(component).toBeTruthy();
   });
 
-  it('when OnInit called fetchTrips should be called once', () => {
+  it('when OnInit called getTrips should be called once', () => {
     component.ngOnInit();
-    expect(mockService.fetchTrips.calls.count()).toBe(1);
+    expect(mockService.getTrips.calls.count()).toBe(1);
   });
 
 });

@@ -15,7 +15,7 @@ export class TripsPage implements OnInit {
   constructor(private _tripsService: TripsService) { }
 
   ngOnInit() {
-    this.trips$ = this._tripsService.fetchTrips();
+    this.trips$ = this._tripsService.getTrips();
   }
 
 }

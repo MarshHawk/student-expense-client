@@ -7,6 +7,9 @@ export const environment = {
   trips_api: {
     endpoint: "http://localhost:3033/",
   },
+  tripsGraphql: {
+    endpoint: "http://localhost:3033/graphql"
+  }
 };
 
 /*
