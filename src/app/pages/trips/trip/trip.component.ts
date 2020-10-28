@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IStudent } from 'src/app/shared/interfaces/student.interface';
 import { ITrip } from 'src/app/shared/interfaces/trip.interface';
 import { IPaymentObligation, IPayDto } from 'src/app/shared/interfaces/payment-obligation.interface';
@@ -55,7 +55,7 @@ export class TripComponent {
       }
       return payDto;
     }
-    return trip.students.reduce(reducer, { activeEntries: [], owees: [], payers: [], pos: [] }).pos;
+    return trip.students.reduce(reducer, { owees: [], payers: [], pos: [] }).pos;
   }
 
 }
