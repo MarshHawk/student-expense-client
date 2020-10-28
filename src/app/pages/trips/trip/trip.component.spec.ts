@@ -34,13 +34,13 @@ describe('TripComponent', () => {
       average: 72.39,
       students: [{
         name: 'a',
-        total_trip_expenses: 53.54
+        totalTripExpenses: 53.54
       }, {
         name: 'b',
-        total_trip_expenses: 50.23
+        totalTripExpenses: 50.23
       }, {
         name: 'c',
-        total_trip_expenses: 113.41
+        totalTripExpenses: 113.41
       }]
     }
 
@@ -66,13 +66,13 @@ describe('TripComponent', () => {
       average: 72.39,
       students: [{
         name: 'a',
-        total_trip_expenses: 53.54
+        totalTripExpenses: 53.54
       }, {
         name: 'b',
-        total_trip_expenses: 50.23
+        totalTripExpenses: 50.23
       }, {
         name: 'c',
-        total_trip_expenses: 113.41
+        totalTripExpenses: 113.41
       }]
     }
 
@@ -99,17 +99,17 @@ describe('TripComponent', () => {
       average: 75.11,
       students: [{
         name: 'a',
-        total_trip_expenses: 5.75
+        totalTripExpenses: 5.75
       }, {
         name: 'b',
-        total_trip_expenses: 250.62
+        totalTripExpenses: 250.62
       }, {
         name: 'c',
-        total_trip_expenses: 34.08
+        totalTripExpenses: 34.08
       },
       {
         name: 'l',
-        total_trip_expenses: 10
+        totalTripExpenses: 10
       }]
     }
 
@@ -140,11 +140,11 @@ describe('TripComponent', () => {
       title: '', total: 0, expenses: [],
       average: 17.95,
       students: [
-        { name: "A", total_trip_expenses: 18.54 },
-        { name: "B", total_trip_expenses: 12 },
-        { name: "C", total_trip_expenses: 4.22 },
-        { name: "L", total_trip_expenses: 10 },
-        { name: "D", total_trip_expenses: 45 }]
+        { name: "A", totalTripExpenses: 18.54 },
+        { name: "B", totalTripExpenses: 12 },
+        { name: "C", totalTripExpenses: 4.22 },
+        { name: "L", totalTripExpenses: 10 },
+        { name: "D", totalTripExpenses: 45 }]
     }
 
     const expectedPaymentObligations = [

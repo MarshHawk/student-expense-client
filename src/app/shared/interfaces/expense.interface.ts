@@ -1,5 +1,5 @@
 export interface IExpense {
-    student_name: string;
+    studentName: string;
     amount: number;
     type: string;
     date: Date;
