@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TripsService } from './trips.service';
-import { ITrip } from 'src/app/shared/interfaces/trip.interface';
 import { Observable } from 'rxjs';
+import { ITrip } from 'student-expense-types';
 
 @Component({
   selector: 'app-trips',

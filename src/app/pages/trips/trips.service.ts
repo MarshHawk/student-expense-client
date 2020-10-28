@@ -3,7 +3,7 @@ import {Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { ITrip } from 'src/app/shared/interfaces/trip.interface';
+import { ITrip } from 'student-expense-types';
 
 @Injectable({
     providedIn: 'root'

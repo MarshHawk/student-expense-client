@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { IStudent } from 'src/app/shared/interfaces/student.interface';
-import { ITrip } from 'src/app/shared/interfaces/trip.interface';
 import { IPaymentObligation, IPayDto } from 'src/app/shared/interfaces/payment-obligation.interface';
+import { IStudent, ITrip } from 'student-expense-types';
 
 export interface ITripUiState {
   showStudentExpenseTotals: boolean;
